@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      CORREIO
+    </ion-title>
+  </ion-toolbar>
+
+  
+  <ion-toolbar color="primary">
+    <ion-searchbar color="dark"  placeholder="Código do Cep"  (ionChange)="localizarCep($event)"
+    >
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-row>
+    <ion-col col-12>
+        <ion-list class="pesquisa">
+            <ion-item *ngIf="correio.logradouro">
+               Logradouro:<br> <b>{{ correio.logradouro}}</b>
+              </ion-item >
+              <ion-item *ngIf="correio.complemento">
+                Complemento:<br> <b>{{ correio.complemento}}</b>
+              </ion-item >
+              <ion-item *ngIf="correio.bairro">
+                Bairro:<br> <b>{{ correio.bairro }}</b>
+              </ion-item >
+              <ion-item *ngIf="correio.localidade">
+                Cidade:<br> <b>{{ correio.localidade }}</b>
+              </ion-item>
+              <ion-item *ngIf="correio.uf">
+                UF:<br> <b>{{ correio.uf}}</b>
+              </ion-item >
+              <ion-item *ngIf="correio.unidade">
+                Unidade:<br> <b>{{ correio.unidade }}</b>
+              </ion-item>
+              <ion-item *ngIf="correio.ibge">
+                IBGE:<br> <b>{{ correio.ibge }}</b>
+              </ion-item>
+              <ion-item *ngIf="correio.gia">
+                GIA:<br> <b>{{ correio.gia }}</b>
+              </ion-item>
+        </ion-list>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
